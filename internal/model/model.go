@@ -10,6 +10,7 @@ type User struct{
 	gorm.Model
 	Name string
 	Email string
+	Password string
 
 	SearchHistories []SearchHistory `gorm:"foreignKey:UserID"`
 
@@ -22,9 +23,7 @@ type SearchHistory struct{
 	SearchDate time.Time `gorm:"autoCreateTime"` 
 
 	UserID uint // foreignKey to user 
-
-
-
 }
+
 
 
